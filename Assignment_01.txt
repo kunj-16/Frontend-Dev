@@ -1,0 +1,105 @@
+Question 1 : Explain the difference between frontend, backend, and full-stack development with
+suitable real-world examples.
+Answer : 
+--Frontend: It's about what users see and interacts with or we can say it is the client-side of the 
+application. The goal is to create a accessible and enjoyable user experience(UX) and user interface
+(UI).
+    >Technologies used:
+    HTML(for atructure)
+    CSS(for styling)
+    JavaScript(for interaction)
+
+    >Example: It is like the dining area of the restaurant. It's the part the customer experiences: the 
+    decration, the tables, menu and the waiter who takes order. It's all about presentation and user 
+    interaction.
+
+--Backend: The engine that powers the frontend, but the user never sees it. It is the server-side of 
+the application. It is responsible for managing data, logic and communicaion between the database and the
+browser. 
+    >Technologies used: Python, java, Node.js 
+
+    >Example: In a restaurant the backend is a kitchen, where the food is cooked. Customer don't see the kitchen, 
+    but it's where the actual work happens. The chefs(developers), ovens(servers), and the pantries(database) all 
+    work together.
+
+--Full Stack: It contains both frontend and backend. A full-stack developer is proficient in both the client-side 
+and the server-side parts of an application and understands how they work together.
+    >Technologies used: MongoDb, Express.js, react, node.js
+
+    >Example: In a restaurant, a full-stack developer is a manager, who understands what's happening in the dining area
+    (frontend) and knows how the kitchen operates(backends).
+
+
+Question 2 : Create a simple diagram showing how the client-server model works in web architecture.
+
+
+Question 3 : Describe how a browser requests and displays a web page from a web server.
+Answer : We ask → Browser requests → Server sends → Browser shows.
+
+1. Type a website address (URL) in the browser.
+2. Browser asks the for the server’s IP address.
+3. Browser sends a request to the web server at that IP asking for the page.
+4. Server responds by sending back the web page’s files (HTML, CSS, JavaScript, images).
+5. Browser reads these files and builds the page you see on your screen.
+6. Browser displays the page and runs any scripts for interactivity.
+
+
+Question 4 : Identify and list the tools required to set up a web development environment. Explain the
+purpose of each.
+Answer : Text editor to write code, browser to view it, server to host it, version control to track changes, package
+manager for libraries, and database to store data.
+
+
+Question 5 : Explain what a web server is and give examples of commonly used servers.
+Answer : A web server is a computer that stores website files and shows them to you when you visit a website.
+    >Example: Apache, Nginx, Microsoft IIS
+
+
+Question 6 : Define the roles of a frontend developer, backend developer, and database administrator
+in a project.
+Answer : The frontend developer is responsible for everything the user see and interact with, like the interior designer
+and waiter of the restaurant.
+The backend developer works behind the scenes. They build and maintain the server, application, and database.
+The database administrator is incaharge of database, which is like the restaurant storeroom where all the ingredients(data) are kept.
+DBAs job is to organize, manage and protect all data which includes user information, product details and order history.
+
+
+Question 8 : Explain the difference between static and dynamic websites. Provide an example of
+each.
+Answer : 
+--Static Website: In this the pages are pre-built ans stored on a server. The content is fixed and doesn't change unless
+the website's code is updated manually.
+They don't use a database. They are generally very fast secure because of their simplicity.
+>Example: Personal portfolio website showcases a designer's work contains the info - bio, projects and contact details.
+
+--Dynamic Website: In this the pages are generated in rel-time based on various factors, such as the user, the time, 
+user location. The content can change and be personalized for each user. They can be a bit slower than static sites
+because the server has to do more work to generate the page.
+>Example: Social media platforms like facebook, Instagram. Feed is unique to person-to-person and constantly updated
+          with posts from the person's followers and following.
+
+
+Question 9 : Research and list five web browsers. Explain how rendering engines differ between
+them.
+Answer : Five we browsers are as following:
+1. Google chrome
+2. Microsoft edge
+3. Brave
+4. Mozilla FIrefox
+5. Apple Safari
+
+--Rendering Engine is the brain for interpreting code, i.e.  it's job is to read the code(like, HTML, CSS and js) and translate
+  it into the visual webpage we see on our screen.
+
+Google Chrome, Microsoft Edge and Brave are all built on the same open-source foundation called CHROMIUM
+and they use rendering engines called Blink. It's like the three different car brands using the exact same
+engine and perform very similarly.
+
+Mozilla firefox uses it's own rendering engine called GECKO. While blink and gecko follow the same web standards,
+but built independently. You can say a website might look slightly different or have a minor glitch.
+
+Apple safari uses WebKit. 
+
+
+Question 10 : Draw a labeled diagram showing the basic web architecture flow — client, server,
+database, and APIs.
