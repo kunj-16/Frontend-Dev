@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Frameset Layout - Navigation & Welcome</title>
+</head>
+<frameset rows="80,*" border="0">
+  <!-- Top frame -->
+  <frame
+    name="navFrame"
+    src="data:text/html;charset=utf-8,<html><head><meta charset='utf-8'><title>Nav</title></head><body style='font-family:Arial,sans-serif;margin:10px;'><a href='#' target='contentFrame'>Home</a> | <a href='#about' target='contentFrame'>About</a> | <a href='#contact' target='contentFrame'>Contact</a></body></html>"
+    title="Navigation Links">
+  <!-- Bottom frame -->
+  <frame
+    name="contentFrame"
+    src="data:text/html;charset=utf-8,<html><head><meta charset='utf-8'><title>Welcome</title></head><body style='font-family:Arial,sans-serif;margin:20px;'><h1>Welcome to My Website</h1><p>This is the bottom frame displaying the welcome message.</p></body></html>"
+    title="Welcome Message">
+  <noframes>
+    <body>
+      <h1>Welcome to My Website</h1>
+      <p>Your browser does not support frames. Navigation: Home | About | Contact</p>
+    </body>
+  </noframes>
+</frameset>
+</html> 
