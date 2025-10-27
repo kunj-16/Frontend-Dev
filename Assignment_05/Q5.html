@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pricing Plans</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    background:#f3f6f8;
+    color:#123;
+    padding:40px;
+  }
+
+  .wrap{max-width:1100px;margin:0 auto;}
+
+  h1{text-align:center;margin-bottom:24px;font-size:1.6rem}
+
+  .plans{
+    display:flex;
+    gap:20px;
+    align-items:stretch; 
+  }
+
+  .plan{
+    flex:1 1 0;
+    display:flex; 
+    border-radius:12px;
+    transition:transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    transform-origin:center;
+  }
+
+  .plan-inner{
+    background:#fff;
+    padding:22px;
+    border:1px solid rgba(0,0,0,0.06);
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(10,20,30,0.04);
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .plan:hover{transform:translateY(-6px) scale(1.02);}
+  .plan:hover .plan-inner{background:#fbfdff; box-shadow:0 12px 30px rgba(8,20,40,0.08);}
+
+  .plan-head{display:flex;justify-content:space-between;align-items:center}
+  .plan-title{font-size:1.1rem;font-weight:700}
+  .plan-sub{font-size:0.85rem;color:#5b6b7a}
+
+  .price{
+    font-size:2.25rem;font-weight:800;
+    color:#0b6cb3;
+  }
+  .per{font-size:0.9rem;color:#6b7b89}
+
+  .features{list-style:none;padding-left:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  .features li{padding:10px;border-radius:8px;background:rgba(6,50,90,0.03);border:1px solid rgba(6,50,90,0.02);font-size:0.95rem}
+
+  .cta{
+    margin-top:auto; 
+    text-align:center;
+  }
+  .cta a{
+    display:inline-block;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:8px;
+    border:1px solid rgba(0,0,0,0.08);
+    background:#e9f4ff;
+    color:#024a78;
+    font-weight:700;
+    transition:transform 160ms ease, background-color 160ms ease;
+  }
+  .cta a:hover{transform:translateY(-3px); background:#d7eefc;}
+
+  .popular .plan-inner{
+    background:linear-gradient(180deg,#fffaf6,#fff);
+    border:2px solid #ff8a3d;
+    box-shadow:0 18px 40px rgba(255,138,61,0.12);
+  }
+  .popular .plan-title{color:#b24b00}
+  .popular .price{color:#b24b00}
+
+  .basic .plan-inner{border-style:solid; border-color:rgba(0,0,0,0.06)}
+  .premium .plan-inner{border-style:dashed; border-color:rgba(6,30,60,0.08)}
+
+  .plan-inner{min-height:360px}
+
+  @media (max-width:600px){
+    body{padding:20px;}
+    .plans{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Pricing Plans</h1>
+
+    <div class="plans">
+      <!-- Basic -->
+      <div class="plan basic" aria-label="Basic plan">
+        <div class="plan-inner">
+          <div class="plan-head">
+            <div>
+              <div class="plan-title">Basic</div>
+              <div class="plan-sub">For personal use</div>
+            </div>
+            <div>
+              <div class="price">₹199</div>
+              <div class="per">/ month</div>
+            </div>
+          </div>
+
+          <ul class="features">
+            <li>1 Project</li>
+            <li>5 GB Storage</li>
+            <li>Email Support</li>
+          </ul>
+
+          <div class="cta">
+            <a href="#subscribe-basic">Choose Basic</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan popular" aria-label="Standard plan - most popular">
+        <div class="plan-inner">
+          <div class="plan-head">
+            <div>
+              <div class="plan-title">Standard</div>
+              <div class="plan-sub">Most popular</div>
+            </div>
+            <div>
+              <div class="price">₹499</div>
+              <div class="per">/ month</div>
+            </div>
+          </div>
+
+          <ul class="features">
+            <li>10 Projects</li>
+            <li>50 GB Storage</li>
+            <li>Priority Email Support</li>
+            <li>Team Collaboration</li>
+          </ul>
+
+          <div class="cta">
+            <a href="#subscribe-standard">Get Standard</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan premium" aria-label="Premium plan">
+        <div class="plan-inner">
+          <div class="plan-head">
+            <div>
+              <div class="plan-title">Premium</div>
+              <div class="plan-sub">For businesses</div>
+            </div>
+            <div>
+              <div class="price">₹1299</div>
+              <div class="per">/ month</div>
+            </div>
+          </div>
+
+          <ul class="features">
+            <li>Unlimited Projects</li>
+            <li>1 TB Storage</li>
+            <li>Phone & Priority Support</li>
+            <li>Dedicated Account Manager</li>
+          </ul>
+
+          <div class="cta">
+            <a href="#subscribe-premium">Choose Premium</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
