@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kunj Bhasin Dashboard</title>
+<style>
+  :root{
+    --header-h:60px;
+    --sidebar-w:240px;
+    --gap:20px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,Segoe UI,Roboto,Arial}
+
+  header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:var(--header-h);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 16px;
+    background:#ffffff;
+    border-bottom:1px solid #e6e6e6;
+    z-index:10;
+  }
+
+  header h1{font-size:22px;}
+  header p{font-size:14px;color:#666;}
+
+  .page{
+    display:flex;
+    gap:var(--gap);
+    padding:var(--gap);
+    padding-top:calc(var(--header-h) + var(--gap));
+    min-height:calc(100vh - var(--header-h));
+  }
+
+  aside{
+    width:var(--sidebar-w);
+    min-height:calc(100vh - var(--header-h));
+    padding:16px;
+    border-right:1px solid #eaeaea;
+  }
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav a{
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+    border-radius:6px;
+  }
+
+  main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:var(--gap);
+    padding:8px 0;
+    min-width:0;
+  }
+
+  .content-row{
+    display:flex;
+    gap:var(--gap);
+    align-items:stretch;
+  }
+
+  .box{
+    flex:1;
+    padding:18px;
+    border-radius:8px;
+    background:#fff;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    min-height:150px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+
+  @media (max-width:768px){
+    .page{
+      flex-direction:column;
+      padding-top:calc(var(--header-h) + var(--gap));
+    }
+    aside{
+      width:100%;
+      min-height:auto;
+      border-right:0;
+      border-bottom:1px solid #eaeaea;
+    }
+    .content-row{
+      flex-direction:column;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Kunj Bhasin</h1>
+    <p>B.Tech (AI & ML) | GLA University, Mathura</p>
+  </header>
+
+  <div class="page">
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">AI/ML Work</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="content-row">
+        <div class="box">
+          <h3>About Me</h3>
+          <p>AI/ML Enthusiast and Automation Developer passionate about creating real-world solutions through Deep Learning and Computer Vision.</p>
+        </div>
+        <div class="box">
+          <h3>Current Projects</h3>
+          <p>• SAR Image Colorization using Deep Learning<br>• Real-Time Speed Monitoring System<br>• Skin Disease Prediction App</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
