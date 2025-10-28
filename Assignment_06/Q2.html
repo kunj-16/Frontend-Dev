@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Google Products — 4 Column Gallery</title>
+<style>
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    grid-auto-rows: 1fr;
+  }
+  .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s;
+  }
+  .card:hover{
+    transform: scale(1.05);
+  }
+  @media (max-width:900px){
+    .gallery{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width:600px){
+    .gallery{ grid-template-columns: 1fr; }
+  }
+  .name{ font-weight:600; margin-bottom:8px; }
+  .price{ color:#444; }
+</style>
+</head>
+<body>
+  <main class="gallery" aria-label="product gallery">
+    <article class="card">
+      <div>
+        <div class="name">Google Pixel 8</div>
+        <div class="price">₹69,999</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Google Pixel 8 Pro</div>
+        <div class="price">₹98,999</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Google Pixel 7a</div>
+        <div class="price">₹43,999</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Pixel Buds Pro</div>
+        <div class="price">₹19,999</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Nest Hub (2nd Gen)</div>
+        <div class="price">₹8,999</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Nest Thermostat</div>
+        <div class="price">₹11,999</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Chromecast with Google TV</div>
+        <div class="price">₹6,499</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div>
+        <div class="name">Pixel Watch</div>
+        <div class="price">₹29,999</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
