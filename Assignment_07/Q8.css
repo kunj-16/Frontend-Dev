@@ -1,0 +1,55 @@
+
+.center {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.label { font-weight: 700; }
+
+.layer-demo { outline: 2px dashed rgba(0,0,0,0.12); }
+
+.margin {
+  padding: 1rem;                
+  background: transparent;
+}
+
+.border {
+  outline: 6px solid #7fb3ff;   
+  padding: 0.6rem;
+  background: rgba(127,179,255,0.06);
+}
+
+.padding {
+  background: rgba(255,223,127,0.18);
+  padding: 1rem;
+}
+
+.content {
+  background: rgba(127,255,166,0.18);
+  width: 160px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxed,
+.boxed .content {
+  box-sizing: border-box;
+}
+
+.desc {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}

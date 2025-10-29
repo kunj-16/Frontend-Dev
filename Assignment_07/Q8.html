@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Box Model Exploration</title>
+  <link rel="stylesheet" href="Q8.css">
+</head>
+<body>
+  <section class="center">
+    <div class="demo">
+      <div class="label">Default (content-box)</div>
+
+      <div class="margin layer-demo">
+        <div class="border layer-demo">
+          <div class="padding layer-demo">
+            <div class="content">Content</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="desc">Margin: space outside the border.</p>
+      <p class="desc">Border: surrounds padding and content.</p>
+      <p class="desc">Padding: space between content and border.</p>
+      <p class="desc">Content: the actual element area (width/height exclude padding &amp; border in <code>content-box</code>).</p>
+    </div>
+
+    <div class="demo">
+      <div class="label">With <code>box-sizing: border-box;</code></div>
+
+      <div class="margin layer-demo">
+        <div class="border layer-demo boxed">
+          <div class="padding layer-demo boxed">
+            <div class="content boxed">Content</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="desc">In <code>border-box</code> the declared width includes padding and border.</p>
+    </div>
+  </section>
+</body>
+</html>

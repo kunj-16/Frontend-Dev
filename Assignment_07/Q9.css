@@ -1,0 +1,48 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f7fa;
+  font-family: "Poppins", sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 320px;
+}
+
+input,
+textarea {
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: none;
+  font-size: 0.95rem;
+  outline: 2px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.outline-default {
+  outline: 2px solid #b0b0b0;
+}
+
+.outline-dashed {
+  outline: 2px dashed #6a5acd;
+  outline-offset: 4px;
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid #0077b6;
+  outline-offset: 6px;
+  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.15);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}

@@ -1,0 +1,46 @@
+/* Font family / size / weight demonstrations */
+.serif { font-family: "Times New Roman", serif; }
+.sans { font-family: Arial, Helvetica, sans-serif; }
+.mono { font-family: "Courier New", monospace; }
+
+.large { font-size: 1.25rem; }      
+.bold  { font-weight: 700; }       
+.light { font-weight: 300; }       
+
+/* Readability: line-height, letter-spacing, text-align */
+article {
+  text-align: justify;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Style inline semantic tags with custom colors */
+mark {
+  background-color: #fff3b0;
+  color: #5a3e00;
+  padding: 0 0.1em;
+}
+
+strong {
+  color: #1a4d2e;
+  font-weight: 700;
+}
+
+em {
+  color: #003366;
+  font-style: italic;
+}
+
+/* Emphasis using pseudo-elements */
+article p::first-letter {
+  font-size: 1.6rem;
+  font-weight: 700;
+  float: left;
+  line-height: 1;
+  margin-right: 0.12rem;
+}
+
+article p::first-line {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
