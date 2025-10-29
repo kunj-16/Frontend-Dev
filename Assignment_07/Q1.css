@@ -1,0 +1,38 @@
+/* Align boxes horizontally using Flexbox */
+.container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Common box styling */
+.box {
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+  transition: border-color 0.3s ease;
+}
+
+/* Different border styles */
+.solid { border-style: solid; }
+.dashed { border-style: dashed; }
+.double { border-style: double; }
+.groove { border-style: groove; }
+
+/* Rounded corners */
+.rounded-small { border-radius: 5px; }
+.rounded-medium { border-radius: 15px; }
+.rounded-large { border-radius: 50px; }
+
+/* Different padding values */
+.padding-small { padding: 10px; }
+.padding-medium { padding: 20px; }
+.padding-large { padding: 30px; }
+
+/* Hover effect */
+.box:hover {
+  border-color: blue;
+}

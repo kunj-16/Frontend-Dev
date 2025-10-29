@@ -1,0 +1,36 @@
+body { margin: 0; height: 100%; }
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.box { display: flex; align-items: center; justify-content: center; }
+
+/* Box 1 uses px units */
+.box1 {
+  width: 200px;
+  height: 150px;
+  background: #f28b82;
+  margin-right: 12px;
+}
+
+/* Box 2 uses % width, demonstrates min-height, max-width and overflow */
+.box2 {
+  width: 40%;
+  min-height: 120px;
+  max-width: 320px;
+  overflow: auto;
+  background: #ccff90;
+  margin: 0 12px;
+  padding: 8px;
+}
+
+/* Box 3 uses vh for height and em for width */
+.box3 {
+  width: 15em;
+  height: 40vh;
+  background: #a7c7ff;
+  margin-left: 12px;
+}

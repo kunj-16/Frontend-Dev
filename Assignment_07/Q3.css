@@ -1,0 +1,50 @@
+body { margin: 0; }
+
+/* fixed header and footer */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ensure main content is not covered by fixed header/footer */
+main {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* sections with gradients */
+.linear-section {
+  height: 50vh;
+  background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.radial-section {
+  height: 50vh;
+  background: radial-gradient(circle at center, #ffd194 0%, #d1913c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

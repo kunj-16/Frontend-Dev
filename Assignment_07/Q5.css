@@ -1,0 +1,57 @@
+[type="text"] {
+  padding: 6px;
+  border: 1px solid #888;
+}
+
+[type="text"]:focus {
+  outline: 2px solid #4a90e2; /* :focus */
+}
+
+input + ul {
+  margin-top: 12px;
+  padding-left: 0;
+}
+
+
+   Style anchor elements that are descendants of list items (ul li a) */
+ul li a {
+  text-decoration: none;
+  padding: 4px 6px;
+  display: inline-block;
+}
+
+a[href^="https"] {
+  font-weight: 600;
+}
+
+ul > li {
+  list-style: none;
+  padding: 8px 0;
+}
+
+/* ADJACENT SIBLING (li + li)
+   Add a top border to each li that immediately follows another li */
+ul > li + li {
+  border-top: 1px dashed #ccc;
+}
+
+ul > li:first-child ~ li {
+  color: #333;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+ul > li:nth-child(2n) {
+  background: #f7f7f7;
+}
+
+ul > li::before {
+  content: "• ";
+}
+ul > li::after {
+  content: " ⇢";
+  font-size: 0.85em;
+  opacity: 0.6;
+}
