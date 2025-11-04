@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UI Components Card</title>
+  <link rel="stylesheet" href="Q7.css">
+</head>
+<body>
+  <main class="stage">
+    <section class="card" aria-labelledby="card-title">
+      <h2 id="card-title">Search & Actions</h2>
+
+      <div class="controls">
+        <label class="search">
+          <input type="search" placeholder="Search..." aria-label="Search" />
+        </label>
+
+        <div class="actions">
+          <button class="btn primary">Search</button>
+          <button class="btn secondary">Reset</button>
+
+          <label class="select">
+            <select aria-label="Sort options">
+              <option value="relevance">Relevance</option>
+              <option value="newest">Newest</option>
+              <option value="popular">Most popular</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

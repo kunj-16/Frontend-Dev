@@ -1,0 +1,100 @@
+
+.wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:20px;
+  background:linear-gradient(180deg,#fcfbff 0%,#f3f7ff 100%);
+}
+
+h1{ margin:0 0 20px 0; font-size:20px; }
+
+.examples{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  justify-content:space-around;
+  width:100%;
+  max-width:980px;
+  flex-wrap:wrap;
+}
+
+.example{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:160px;
+  min-height:48px;
+  padding:10px 16px;
+  border-radius:10px;
+  transition: transform 220ms ease-in-out, box-shadow 220ms ease-in-out, background-color 220ms ease-in-out, color 220ms ease-in-out;
+  box-shadow:0 6px 18px rgba(15,23,42,0.08);
+  text-decoration:none;
+  color:inherit;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+}
+
+.primary{
+  background:#2563eb;
+  color:#fff;
+}
+
+.outline{
+  background:transparent;
+  border:2px solid #2563eb;
+  color:#2563eb;
+}
+
+.link{
+  background:#111827;
+  color:#fff;
+  border-radius:999px;
+  padding:10px 18px;
+}
+
+.card{
+  flex-direction:column;
+  padding:0;
+  min-width:200px;
+  box-shadow:0 8px 22px rgba(15,23,42,0.08);
+  overflow:hidden;
+  background:#fff;
+}
+.card img{ display:block; width:100%; height:auto; transition:transform 260ms ease-in-out; }
+.card figcaption{ padding:10px 12px; font-size:14px; }
+
+
+.example:hover{
+  transform:translateY(-6px) scale(1.04);
+  box-shadow:0 18px 40px rgba(15,23,42,0.14);
+}
+
+.example:focus{
+  outline:none;
+  box-shadow:0 18px 40px rgba(37,99,235,0.12);
+  transform:translateY(-4px) scale(1.02);
+}
+
+.example:active{
+  transform:translateY(2px) scale(0.995);
+  box-shadow:0 6px 14px rgba(15,23,42,0.08);
+}
+
+.primary:hover{ background:#134cd8; color:#fff; }
+.outline:hover{ background:#2563eb; color:#fff; border-color:transparent; }
+.link:hover{ background:#0b1220; transform:translateY(-6px) scale(1.06); }
+
+.card:hover img{ transform:scale(1.06); }
+
+.example:focus-visible{ box-shadow:0 0 0 4px rgba(37,99,235,0.14); }
+
+@media (max-width:700px){
+  .examples{ flex-direction:column; gap:14px; align-items:stretch; }
+  .example{ width:100%; min-width:auto; }
+}

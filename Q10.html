@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mini UI Layout</title>
+  <link rel="stylesheet" href="Q10.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Mini App</h1>
+  </header>
+
+  <main class="stage">
+    <section class="card" aria-labelledby="card-title">
+      <h2 id="card-title">Quick Contact</h2>
+
+      <div class="card-body">
+        <img class="avatar" src="https://picsum.photos/seed/ui/120/120" alt="avatar">
+
+        <form class="form" action="#" method="post" novalidate>
+          <label>
+            <span class="label-text">Name</span>
+            <input name="name" type="text" required />
+          </label>
+
+          <label>
+            <span class="label-text">Email</span>
+            <input name="email" type="email" required />
+          </label>
+
+          <div class="controls">
+            <button type="submit" class="btn primary">Send</button>
+            <button type="reset" class="btn secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Mini UI</p>
+  </footer>
+</body>
+</html>

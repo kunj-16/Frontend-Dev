@@ -1,0 +1,53 @@
+:root{
+transform:translateY(1px);
+}
+
+
+/* Button focus & active */
+.demo-btn,
+.demo-active{
+padding:8px 14px;
+border-radius:6px;
+border:2px solid var(--accent);
+background:transparent;
+color:var(--accent);
+}
+.demo-btn:focus{
+background:var(--accent);
+color:#fff;
+}
+.demo-btn:active{
+transform:translateY(2px);
+}
+.demo-active:active{
+background:var(--accent-dark);
+color:#fff;
+}
+
+
+/* List with nth-child styling */
+.demo-list{
+list-style:none;
+}
+.demo-list li{
+padding:8px 10px;
+border-radius:6px;
+margin:6px 0;
+}
+.demo-list li:nth-child(odd){
+background:#eef2f2;
+}
+.demo-list li:nth-child(even){
+background:#ffffff;
+}
+.demo-list li:hover{
+background:var(--accent);
+color:#fff;
+}
+
+
+.explain{
+margin-top:10px;
+font-size:13px;
+text-align:center;
+}

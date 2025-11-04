@@ -1,0 +1,95 @@
+
+* { box-sizing: border-box; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: linear-gradient(180deg,#fbfdff 0%,#f1f7ff 100%);
+}
+
+.site-header, .site-footer { text-align: center; }
+.site-header h1 { margin: 0; font-size: 20px; }
+.site-footer p { margin: 0; font-size: 13px; color: #555; }
+
+.card {
+  width: 760px;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(12,40,80,0.06);
+  border: 1px solid rgba(10,30,60,0.04);
+}
+
+.card-body {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(12,40,80,0.06);
+  flex-shrink: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.label-text { display: block; font-size: 13px; margin-bottom: 6px; }
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(10,30,60,0.08);
+  box-shadow: 0 6px 14px rgba(12,40,80,0.04);
+  transition: box-shadow 0.18s ease-in-out, transform 0.12s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.10);
+  transform: translateY(-1px);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+.btn {
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(12,40,80,0.06);
+  transition: transform 0.14s ease-in-out, box-shadow 0.14s ease-in-out, background-color 0.14s ease-in-out;
+}
+
+.btn.primary { background:#2563eb; color:#fff; }
+.btn.secondary { background:#eef2ff; color:#2563eb; }
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(12,40,80,0.08); }
+.btn:active { transform: translateY(2px); box-shadow: 0 6px 12px rgba(12,40,80,0.06); }
+
+.btn:focus { outline: none; box-shadow: 0 0 0 4px rgba(37,99,235,0.12); }
+
+@media (max-width:720px) {
+  .card-body { flex-direction: column; align-items: center; }
+  .avatar { width: 100px; height: 100px; }
+  .form { width: 100%; }
+}
