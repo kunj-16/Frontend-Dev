@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Activity Planner</title>
+</head>
+<body>
+    <h2>Weather Activity Planner</h2>
+
+    <label>Temperature (°C):</label>
+    <input type="number" id="temp"><br><br>
+
+    <label>Is it Raining?</label>
+    <select id="rain">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select><br><br>
+
+    <label>Wind Speed (km/h):</label>
+    <input type="number" id="wind"><br><br>
+
+    <button onclick="suggestActivity()">Check Activity</button>
+
+    <h3 id="activity"></h3>
+
+    <script src="WeatherActivityPlanner.js"></script>
+</body>
+</html>
