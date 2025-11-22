@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boolean Logic Access System</title>
+</head>
+<body>
+  <h2>Smart Home Security Check</h2>
+  <button onclick="checkSecurity(true, true, true, true)">Test: All Secure</button>
+  <button onclick="checkSecurity(true, false, true, true)">Test: Window Open</button>
+  <button onclick="checkSecurity(false, true, true, true)">Test: Door Unlocked</button>
+  <button onclick="checkSecurity(true, true, false, true)">Test: Alarm Off</button>
+  <button onclick="checkSecurity(true, true, true, false)">Test: Owner Outside</button>
+
+  <p id="status"></p>
+
+  <script src="BooleanLogic.js"></script>
+</body>
+</html>
