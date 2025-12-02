@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Highlight</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="product.css">
+  <style>
+    .product { border: 1px solid #ccc; padding: 15px; margin: 15px; display: inline-block; width: 180px; cursor: pointer; position: relative; }
+    .highlight { background-color: #f9f871; }
+    .favorite.selected { color: red; }
+    .details { display: none; font-size: 0.9em; color: #555; }
+    .product[data-discount] { border-color: green; }
+  </style>
+</head>
+<body>
+
+<h2>Featured Products</h2>
+
+<div class="product" data-stock="10" data-discount="20%">
+  <h3>Smartphone</h3>
+  <p class="price">₹15000</p>
+  <p class="details">Brand: XYZ, RAM: 8GB</p>
+  <span class="favorite">&#9733;</span>
+</div>
+
+<div class="product" data-stock="0">
+  <h3>Headphones</h3>
+  <p class="price">₹2000</p>
+  <p class="details">Brand: ABC, Wireless</p>
+  <span class="favorite">&#9733;</span>
+</div>
+
+<div class="product" data-stock="5" data-discount="10%">
+  <h3>Laptop</h3>
+  <p class="price">₹55000</p>
+  <p class="details">Brand: LMN, Core i5</p>
+  <span class="favorite">&#9733;</span>
+</div>
+
+<div class="product" data-stock="8">
+  <h3>Keyboard</h3>
+  <p class="price">₹1200</p>
+  <p class="details">Mechanical, RGB</p>
+  <span class="favorite">&#9733;</span>
+</div>
+
+<div class="product" data-stock="3" data-discount="15%">
+  <h3>Smartwatch</h3>
+  <p class="price">₹7000</p>
+  <p class="details">Brand: DEF, Waterproof</p>
+  <span class="favorite">&#9733;</span>
+</div>
+
+<script src="product.js"></script>
+</body>
+</html>

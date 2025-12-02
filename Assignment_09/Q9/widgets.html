@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-jQuery Widgets</title>
+
+  <!-- jQuery Version 1 (for carousel and active widget) -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <!-- jQuery Version 2 (for modals and tooltips) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    #carousel { width: 80%; margin: 20px auto; overflow: hidden; border: 1px solid #ccc; padding: 10px; text-align: center; }
+    .slide { display: none; font-size: 1.2em; padding: 20px; background-color: #74b9ff; color: white; margin: 5px 0; }
+    .active { border: 2px solid #e17055; }
+    .widget { display: inline-block; padding: 10px 15px; border: 1px solid #ccc; margin: 5px; cursor: pointer; }
+    .tooltip { display: none; position: absolute; background-color: #2d3436; color: white; padding: 5px; border-radius: 4px; font-size: 0.8em; }
+    #modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background: #ffeaa7; border: 1px solid #2d3436; z-index: 1000; }
+    #modalClose { cursor: pointer; margin-top: 10px; display: inline-block; padding: 5px 10px; background: #d63031; color: white; }
+  </style>
+</head>
+<body>
+
+<h2>Multi-jQuery Widgets Dashboard</h2>
+
+<div id="carousel">
+  <div class="slide">Slide 1: Welcome</div>
+  <div class="slide">Slide 2: Updates</div>
+  <div class="slide">Slide 3: Notifications</div>
+</div>
+
+<div id="widgets">
+  <div class="widget" data-tooltip="Dashboard Widget 1">Widget 1</div>
+  <div class="widget" data-tooltip="Dashboard Widget 2">Widget 2</div>
+  <div class="widget" data-tooltip="Dashboard Widget 3">Widget 3</div>
+</div>
+
+<div id="modal">
+  <p>This is a notification modal!</p>
+  <div id="modalClose">Close</div>
+</div>
+
+<script src="widgets.js"></script>
+</body>
+</html>

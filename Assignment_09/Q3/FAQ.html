@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive FAQ</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="faq.css">
+  <style>
+    .faq-item { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+    .question { font-weight: bold; cursor: pointer; }
+    .answer { display: none; margin-top: 5px; }
+    input.answer-input { margin-top: 5px; width: 95%; padding: 5px; }
+  </style>
+</head>
+<body>
+
+<h2>FAQ Section</h2>
+
+<div class="faq-item">
+  <div class="question">What is your return policy?</div>
+  <div class="answer">
+    You can return products within 30 days of purchase.
+    <input type="text" class="answer-input" placeholder="Ask something related...">
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="question">Do you provide international shipping?</div>
+  <div class="answer">
+    Yes, we ship to most countries worldwide.
+    <input type="text" class="answer-input" placeholder="Your query here...">
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="question">How can I track my order?</div>
+  <div class="answer">
+    You can track your order using the tracking link sent to your email.
+    <input type="text" class="answer-input" placeholder="Ask about tracking...">
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="question">Can I change my shipping address?</div>
+  <div class="answer">
+    Yes, address changes are allowed within 24 hours of order placement.
+    <input type="text" class="answer-input" placeholder="Ask about address...">
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="question">What payment methods do you accept?</div>
+  <div class="answer">
+    We accept credit/debit cards, net banking, and UPI payments.
+    <input type="text" class="answer-input" placeholder="Ask payment related...">
+  </div>
+</div>
+
+<script src="FAQ.js"></script>
+</body>
+</html>

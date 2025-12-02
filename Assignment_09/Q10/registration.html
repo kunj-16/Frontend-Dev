@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form Validation</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="registration.css">
+  <style>
+    form { max-width: 400px; margin: 20px auto; display: flex; flex-direction: column; }
+    input { margin: 10px 0; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+    input.error { border-color: red; }
+    #success { color: green; font-weight: bold; margin-top: 10px; }
+    button { padding: 8px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<h2>User Registration</h2>
+
+<form id="registrationForm">
+  <input type="text" id="name" placeholder="Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button type="submit">Register</button>
+</form>
+
+<div id="success"></div>
+
+<script src="registration.js"></script>
+</body>
+</html>

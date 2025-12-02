@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Members Directory</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="team.css">
+  <style>
+    .department { border: 1px solid #ccc; padding: 10px; margin: 10px; }
+    .manager { font-weight: bold; cursor: pointer; margin-bottom: 5px; }
+    .employee { padding: 5px 10px; margin: 2px 0; cursor: pointer; }
+    .highlight { background-color: #ffeaa7; }
+    .contact { display: none; font-size: 0.9em; color: #2d3436; }
+    .collapsed .employee { display: none; }
+  </style>
+</head>
+<body>
+
+<h2>Team Members Directory</h2>
+
+<div class="department" data-dept="Sales">
+  <div class="manager">Alice (Manager)</div>
+  <div class="employee">Bob <span class="contact">bob@example.com</span></div>
+  <div class="employee">Charlie <span class="contact">charlie@example.com</span></div>
+</div>
+
+<div class="department" data-dept="IT">
+  <div class="manager">David (Manager)</div>
+  <div class="employee">Eve <span class="contact">eve@example.com</span></div>
+  <div class="employee">Frank <span class="contact">frank@example.com</span></div>
+  <div class="employee">Grace <span class="contact">grace@example.com</span></div>
+</div>
+
+<div class="department" data-dept="HR">
+  <div class="manager">Hannah (Manager)</div>
+  <div class="employee">Ivy <span class="contact">ivy@example.com</span></div>
+  <div class="employee">Jack <span class="contact">jack@example.com</span></div>
+</div>
+
+<div>
+  <button id="randomEmployeeBtn">Highlight Random Employee Siblings</button>
+  <button id="toggleTeamBtn">Collapse/Expand Teams</button>
+</div>
+
+<script src="team.js"></script>
+</body>
+</html>
