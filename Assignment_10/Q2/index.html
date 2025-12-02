@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Status Dashboard</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    table {
+      width: 450px;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    .toggle {
+      padding: 5px 12px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+    .active-btn {
+      background-color: green;
+    }
+    .inactive-btn {
+      background-color: red;
+    }
+    #error {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Employee Status Dashboard</h2>
+
+<div id="error">Failed to update status. Reverting...</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Toggle</th>
+    </tr>
+  </thead>
+  <tbody id="employeeTable"></tbody>
+</table>
+
+<script>
+  const API_URL = "http://localhost:3002/employees";
+
+  // Fetch employees using XMLHttpRequest
+  function loadEmployees() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", API_URL);
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const employees = JSON.parse(xhr.responseText);
+        renderTable(employees);
+      }
+    };
+
+    xhr.send();
+  }
+
+  // Render employee table
+  function renderTable(data) {
+    const table = document.getElementById("employeeTable");
+    table.innerHTML = "";
+
+    data.forEach(emp => {
+      let row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${emp.id}</td>
+        <td>${emp.name}</td>
+        <td class="status">${emp.status}</td>
+        <td>
+          <button class="toggle ${emp.status === 'active' ? 'active-btn' : 'inactive-btn'}"
+                  data-id="${emp.id}"
+                  data-status="${emp.status}">
+            ${emp.status === 'active' ? 'Deactivate' : 'Activate'}
+          </button>
+        </td>
+      `;
+
+      table.appendChild(row);
+    });
+
+    attachToggleEvents();
+  }
+
+  // Add click events to toggle buttons
+  function attachToggleEvents() {
+    document.querySelectorAll(".toggle").forEach(button => {
+      button.addEventListener("click", function () {
+        const id = this.getAttribute("data-id");
+        const currentStatus = this.getAttribute("data-status");
+        const newStatus = currentStatus === "active" ? "inactive" : "active";
+
+        // UI update immediately
+        const oldStatus = currentStatus;
+        this.setAttribute("data-status", newStatus);
+        this.textContent = newStatus === "active" ? "Deactivate" : "Activate";
+        this.className = "toggle " + (newStatus === "active" ? "active-btn" : "inactive-btn");
+
+        // Update status cell in table
+        this.parentElement.parentElement.querySelector(".status").textContent = newStatus;
+
+        // Send PATCH request
+        updateStatus(id, newStatus, this, oldStatus);
+      });
+    });
+  }
+
+  // PATCH request to update employee status
+  function updateStatus(id, newStatus, button, oldStatus) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("PATCH", API_URL + "/" + id);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onload = function () {
+      if (xhr.status !== 200) {
+        revertUI(button, oldStatus);
+      }
+    };
+
+    xhr.onerror = function () {
+      revertUI(button, oldStatus);
+    };
+
+    xhr.send(JSON.stringify({ status: newStatus }));
+  }
+
+  // Revert UI if PATCH fails
+  function revertUI(button, oldStatus) {
+    document.getElementById("error").style.display = "block";
+
+    setTimeout(() => {
+      document.getElementById("error").style.display = "none";
+    }, 2000);
+
+    button.setAttribute("data-status", oldStatus);
+    button.textContent = oldStatus === "active" ? "Deactivate" : "Activate";
+    button.className = "toggle " + (oldStatus === "active" ? "active-btn" : "inactive-btn");
+
+    button.parentElement.parentElement.querySelector(".status").textContent = oldStatus;
+  }
+
+  loadEmployees();
+</script>
+
+</body>
+</html>

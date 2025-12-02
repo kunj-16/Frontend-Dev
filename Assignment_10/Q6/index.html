@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      width: 350px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #msg {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>User Registration</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+<input type="email" id="email" placeholder="Email Address">
+<button id="registerBtn">Register</button>
+
+<div id="msg"></div>
+
+<script>
+  const API = "http://localhost:3006/users";
+
+  document.getElementById("registerBtn").addEventListener("click", registerUser);
+
+  async function registerUser() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const msg = document.getElementById("msg");
+
+    msg.textContent = "";
+
+    if (!name || !email) {
+      msg.textContent = "Please fill all fields.";
+      msg.style.color = "red";
+      return;
+    }
+
+    try {
+      // Step 1: Check duplicate email
+      const check = await axios.get(API + "?email=" + email);
+
+      if (check.data.length > 0) {
+        msg.textContent = "Email already registered.";
+        msg.style.color = "red";
+        return;
+      }
+
+      // Step 2: Add new user (POST)
+      await axios.post(API, { name, email });
+
+      msg.textContent = "Registration successful!";
+      msg.style.color = "green";
+
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+
+    } catch (err) {
+      msg.textContent = "Error connecting to server.";
+      msg.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>

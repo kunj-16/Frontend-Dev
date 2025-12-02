@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    .task {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 350px;
+    }
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+    select {
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Task Manager</h2>
+
+<label>Sort By Priority / Completed :</label>
+<select id="filter">
+  <option value="">All</option>
+  <option value="Low">Low Priority</option>
+  <option value="Medium">Medium Priority</option>
+  <option value="High">High Priority</option>
+  <option value="Completed">Completed</option>
+</select>
+
+<div id="taskList"></div>
+
+<script>
+  const API_URL = "http://localhost:3003/tasks";
+
+  // Load tasks from server
+  function loadTasks(filter = "") {
+    let url = API_URL;
+
+    if (filter === "Completed") {
+      url += "?completed=true";
+    } else if (filter) {
+      url += "?priority=" + filter;
+    }
+
+    $.ajax({
+      url: url,
+      method: "GET",
+      success: function (data) {
+        $("#taskList").html("");
+
+        data.forEach(task => {
+          $("#taskList").append(`
+            <div class="task ${task.completed ? 'completed' : ''}">
+              <span>${task.title} — <strong>${task.priority}</strong></span>
+              <input type="checkbox" class="toggle" data-id="${task.id}" ${task.completed ? "checked" : ""}>
+            </div>
+          `);
+        });
+
+        attachToggleEvents();
+      }
+    });
+  }
+
+  // Toggle completed status using PATCH
+  function attachToggleEvents() {
+    $(".toggle").on("change", function () {
+      const id = $(this).data("id");
+      const newStatus = $(this).is(":checked");
+
+      $.ajax({
+        url: API_URL + "/" + id,
+        method: "PATCH",
+        data: JSON.stringify({ completed: newStatus }),
+        contentType: "application/json",
+        success: function () {
+          loadTasks($("#filter").val());
+        }
+      });
+    });
+  }
+
+  // Listen to filter dropdown
+  $("#filter").on("change", function () {
+    loadTasks($(this).val());
+  });
+
+  // Initial load
+  loadTasks();
+</script>
+
+</body>
+</html>

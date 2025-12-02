@@ -1,0 +1,9 @@
+{
+  "tasks": [
+    { "id": 1, "title": "Buy groceries", "priority": "Low", "completed": false },
+    { "id": 2, "title": "Finish project", "priority": "High", "completed": true },
+    { "id": 3, "title": "Clean the room", "priority": "Medium", "completed": false },
+    { "id": 4, "title": "Call parents", "priority": "Low", "completed": true },
+    { "id": 5, "title": "Prepare for exam", "priority": "High", "completed": false }
+  ]
+}

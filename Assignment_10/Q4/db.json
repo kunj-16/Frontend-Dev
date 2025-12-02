@@ -1,0 +1,25 @@
+{
+  "users": [
+    { "id": 1, "name": "Aarav" },
+    { "id": 2, "name": "Riya" },
+    { "id": 3, "name": "Kabir" },
+    { "id": 4, "name": "Simran" },
+    { "id": 5, "name": "Aditi" }
+  ],
+
+  "orders": [
+    { "id": 1, "amount": 499 },
+    { "id": 2, "amount": 899 },
+    { "id": 3, "amount": 1999 },
+    { "id": 4, "amount": 699 },
+    { "id": 5, "amount": 1299 }
+  ],
+
+  "products": [
+    { "id": 1, "name": "Laptop" },
+    { "id": 2, "name": "Headphones" },
+    { "id": 3, "name": "Keyboard" },
+    { "id": 4, "name": "Mouse" },
+    { "id": 5, "name": "Pendrive" }
+  ]
+}
